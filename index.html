@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Valdivia Earthquake (1960)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    const buttons = document.querySelectorAll('.button-bar button');
+
+    sections.forEach(section => {
+        if(section.id === id){
+            section.classList.remove('hidden');
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
+            section.classList.add('hidden');
+        }
+    });
+
+    buttons.forEach(button => {
+        const buttonTarget = button.getAttribute('onclick').match(/'(.+?)'/)[1];
+        if(buttonTarget === id){
+            button.style.display = 'none';
+        } else {
+            button.style.display = 'inline-block';
+        }
+    });
+}
+
+window.onload = function(){
+    showSection('home');
+};
+</script>
+
+<body>
+
+<header>
+    <div class="header-box">
+        <img src="images/title_background.jpg" alt="Valdivia Earthquake">
+        <h1>The Worst Earthquake In History</h1>
+    </div>
+</header>
+
+<div class="button-bar">
+    <button id="homeBtn" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('impacts')">Historical & Societal Impacts</button>
+    <button onclick="showSection('tectonic')">Tectonic Setting</button>
+    <button onclick="showSection('damage')">Damages</button>
+    <button onclick="showSection('facts')">Fun Facts</button>
+    <button onclick="showSection('videos')">Videos</button>
+    <button onclick="showSection('links')">Links</button>    
+    <button onclick="showSection('resources')">Resources</button>  
+</div>
+
+<section id="home" class="visible">
+    <h2>What was it?</h2>
+    <p>The Valdivia Earthquake was a 9.5 magnitude earthquake - the largest earthquake in the world.</p>
+    <img src="images/tsunami.jpg" alt="Tsunami waves from the Valdivia Earthquake">
+
+    <h2>Where and when did it happen?</h2>
+    <p>The Valdivia Earthquake happened in Valdivia, Chile, on May 22, 1960, 2:11:20 p.m. EST (19:11:20 local). It was preceded by 4 foreshocks, each bigger than 7.0 magnitude, with the biggest reaching 7.9 magnitude.</p>
+
+    <img src="images/earthquake_map.jpg" alt="Map showing the epicenter of the Valdivia Earthquake">
+
+</section>
+
+<section id="impacts" class="hidden">
+    <h2>Historical & Societal Impacts</h2>
+    <p>
+        The 1960 Valdivia earthquake fundamentally reshaped Chile’s national identity and global safety standards. It catalyzed the development of some of the world's strictest building codes, transforming Chile into a resilient "seismic culture" where disaster preparedness is a core societal value.
+        Historically, the disaster’s reach extended far beyond South America, prompting the United Nations to establish the Pacific Tsunami Warning System to prevent future global casualties. Locally, the event altered the landscape forever; land subsidence created the Carlos Anwandter Nature Sanctuary, turning former farmland into a protected wetland ecosystem that remains a major ecological site today.
+    </p>
+</section>
+
+<section id="tectonic" class="hidden">
+    <h2>Tectonic setting of the Earthquake</h2>
+    <p>
+        The Valdivia Earthquake occurred along the southern segment of the Peru–Chile Trench, where the Nazca Plate is being subducted beneath the South American Plate. This is a convergent plate boundary, meaning the two plates move toward each other. The Nazca Plate moves eastward at about 7–8 cm per year, sliding beneath the overriding South American Plate. This type of boundary generates megathrust earthquakes, which are the largest earthquakes on Earth. The earthquake’s massive magnitude (9.5) was caused by sudden rupture along a large portion of the plate interface, releasing decades of accumulated strain. Subduction zones like this also produce tsunamis, which is why the Valdivia Earthquake generated a devastating 25-meter wave that affected coastal areas across the Pacific.
+    </p>
+
+    <img src="images/tectonic_setting.jpg" alt="Tectonic setting of the Valdivia Earthquake">
+
+</section>
+
+<section id="damage" class="hidden">
+    <h2>Damages Caused by the Earthquake</h2>
+    <p>
+        The Valdivia Earthquake caused catastrophic destruction across southern Chile. It resulted in 4,655 casualties, including 1,655 deaths, 3,000 injuries, and 32 people reported missing. The earthquake triggered a massive 25-meter tsunami that devastated coastal towns and carried destruction across the Pacific Ocean. Entire neighborhoods were flattened, roads and bridges were destroyed, and vital infrastructure such as hospitals, schools, and ports suffered severe damage. The total economic loss was estimated at $675,500,000, making it one of the costliest natural disasters of the 20th century. Its effects were so powerful that the tremors were felt as far away as North America and Asia, highlighting the immense scale of the disaster.
+    </p>
+
+    <img src="images/damage.jpg" alt="Damage caused by the Valdivia Earthquake">
+
+</section>
+
+<section id="facts" class="hidden">
+    <h2>Tectonic Setting – Fun Facts</h2>
+
+    <details>
+        <summary>Plate Boundary & Location</summary>
+        <ul>
+            <li>The earthquake occurred along a convergent plate boundary.</li>
+            <li>This boundary is part of the Peru–Chile Trench.</li>
+            <li>The Nazca Plate is subducting beneath the South American Plate.</li>
+            <li>The Nazca Plate is an oceanic plate.</li>
+            <li>The South American Plate is a continental plate.</li>
+            <li>The plates converge at a rate of about 7–8 cm per year.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Subduction Process</summary>
+        <ul>
+            <li>Subduction occurs when one tectonic plate is forced under another.</li>
+            <li>Oceanic plates are denser than continental plates.</li>
+            <li>This density difference causes the Nazca Plate to sink.</li>
+            <li>Stress builds up where the plates are locked together.</li>
+            <li>That stress accumulated for decades before 1960.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Fault Type & Earthquake Mechanics</summary>
+        <ul>
+            <li>The earthquake was caused by a sudden release of stored energy.</li>
+            <li>The rupture occurred along a megathrust fault.</li>
+            <li>Megathrust faults are found only at subduction zones.</li>
+            <li>These faults can produce the largest earthquakes on Earth.</li>
+            <li>The rupture zone stretched for over 1,000 kilometers.</li>
+            <li>The locked plate interface suddenly slipped.</li>
+            <li>This slip caused extreme ground shaking.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Tsunami Formation</summary>
+        <ul>
+            <li>The seafloor was suddenly uplifted during the rupture.</li>
+            <li>This uplift displaced massive amounts of ocean water.</li>
+            <li>The displacement of water triggered a powerful tsunami.</li>
+            <li>Subduction zone earthquakes commonly generate tsunamis.</li>
+            <li>The tsunami traveled across the Pacific Ocean.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Geological Effects on the Landscape</summary>
+        <ul>
+            <li>The South American Plate was lifted several meters in places.</li>
+            <li>Some coastal areas permanently subsided.</li>
+            <li>The tectonic movement reshaped parts of southern Chile.</li>
+            <li>The earthquake released centuries of accumulated strain.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Why Chile Has Frequent Earthquakes</summary>
+        <ul>
+            <li>The Nazca Plate continues to subduct today.</li>
+            <li>This region remains one of the most seismically active on Earth.</li>
+            <li>Chile frequently experiences large earthquakes due to this setting.</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Scientific Significance</summary>
+        <ul>
+            <li>The Valdivia Earthquake is the largest recorded earthquake.</li>
+            <li>It helped scientists understand subduction zones.</li>
+            <li>It confirmed the link between megathrust earthquakes and tsunamis.</li>
+            <li>The event provided key evidence for plate tectonics theory.</li>
+            <li>Few tectonic environments can produce earthquakes this powerful.</li>
+        </ul>
+    </details>
+
+</section>
+
+<section id="videos" class="hidden">
+    <h2>Video</h2>
+    <p>An educational video about the Valdivia Earthquake:</p>
+    <iframe width="560" height="340"
+        src="https://www.teachertube.com/embed/videos/457976"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<section id="links" class="hidden">
+    <h2>Links</h2>
+    
+    <p class="resource-note">
+        The following links provide additional information on earthquakes, tsunamis, and related geological info.
+    </p>
+    <ul class="resource-list">
+        <li><a href="https://search.usa.gov/search?affiliate=nceinoaa&query=valdivia+earthquake" target="_blank">NOAA – World Oocean Database code table: s_4_institute</a></li>
+        <li><a href="https://www.iris.edu/hq/search?cx=000587591391783241528%3Adsb0_jo9rjy&cof=FORID%3A9&ie=UTF-8&q=Valdivia+eartquake#gsc.tab=0&gsc.q=earthquakes&gsc.sort=" target="_blank">IRIS – Earthquake Information</a></li>
+        <li><a href="https://www.nationalgeographic.com/search?q=earthquakes&location=srp&type=manual" target="_blank">National Geographic – Earthquakes Overview</a></li>
+        <li><a href="https://www.pbs.org/wgbh/nova/?s=Veldivia%20earthquake" target="_blank">PBS NOVA – Earthquakes</a></li>
+        <li><a href="https://www.smithsonianmag.com/science-nature/how-earthquakes-and-volcanoes-reveal-beating-heart-planet-180960564/" target="_blank">Smithsonian Magazine – How Earthquakes and Volcanoes Reveal the Beating Heart of the Planet</a></li>
+        <li>
+    <a href="https://www.youtube.com/watch?v=FxnEL-4VAuM" target="_blank">
+        YouTube – Valdivia - The Strongest Earthquake in Recorded History
+    </a>
+</li>
+<li>
+    <a href="https://www.youtube.com/watch?v=tZwBbn6Yrug" target="_blank">
+        YouTube – The strongest earthquake ever recorded was in Valdivia in 1960 in Chile. What were the causes?
+    </a>
+</li>
+
+<li>
+    <a href="http://youtube.com/watch?v=ZyquauwqJ3c&t=4s" target="_blank">
+        YouTube – The Biggest Earthquake Ever Recorded | National Geographic
+    </a>
+</li>
+
+    </ul>
+</section>
+
+<section id="resources" class="hidden">
+    <h2>Resources</h2>
+    <p class="resource-note">
+        The following sources were used for research and verification of information on this site.
+    </p>
+    <ul class="resource-list">
+        <li><a href="https://www.britannica.com/event/Chile-earthquake-of-1960" target="_blank">Britannica – Chile Earthquake of 1960</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/1960_Valdivia_earthquake" target="_blank">Wikipedia – 1960 Valdivia Earthquake</a></li>
+        <li><a href="https://www.reddit.com/r/Philippines/comments/bre7py/til_59_years_ago_in_the_philippines_tsunami_waves/" target="_blank">Reddit – TIL about Philippines tsunami waves from 1960</a></li>
+        <li><a href="https://earthjay.com/?p=7109" target="_blank">EarthJay – 1960 Chile Earthquake Tectonics</a></li>
+        <li><a href="https://www.researchgate.net/figure/Tectonic-setting-of-the-1960-Chile-earthquake-a-Megathrust-slip-contours-60-red-lines_fig1_327319586" target="_blank">ResearchGate – Tectonic Setting of the 1960 Chile Earthquake</a></li>
+        <li><a href="https://www.teachertube.com/embed/videos/457976" target="_blank">TeacherTube – “Largest Earthquake in the World, Valdivia 1960”</a></li>
+        <li><a href="https://earthquake.usgs.gov/earthquakes/eventpage/official19600522191120_30/impact" target="_blank">USGS – Valdivia Earthquake Impact Page</a></li>
+    </ul>
+
+</section>
+
+</body>
+</html>
